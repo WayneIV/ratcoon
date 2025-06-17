@@ -57,8 +57,8 @@ PY
     fi
 
     datetime=$(exiftool -s3 -DateTimeOriginal "$img" 2>/dev/null)
-    gpslat=$(exiftool -s3 -GPSLatitude "$img" 2>/dev/null)
-    gpslon=$(exiftool -s3 -GPSLongitude "$img" 2>/dev/null)
+    gpslat=$(exiftool -s3 -n -GPSLatitude "$img" 2>/dev/null)
+    gpslon=$(exiftool -s3 -n -GPSLongitude "$img" 2>/dev/null)
     echo "\"$img\",$face_count,\"$datetime\",\"$gpslat\",\"$gpslon\"" >> "$csv"
 }
 
